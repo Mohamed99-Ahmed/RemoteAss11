@@ -55,8 +55,9 @@
                 <form class="box p-5 d-flex flex-column gap-3 text-center " aria-required="true">
                     <h1 class="text-primary ">Smart Login System</h1>
                     <input type="text" class="form-control " id="nameSignUp" placeholder="Enter your name">
+                    <p class="text-danger fs-5 d-none" id="nameError">Your name should be at least 3 characters</p>
+                    <input type="email" class="form-control " id="emailSignUp" placeholder="Enter your email" >
                     <p class="text-danger fs-5 d-none" id="emailError">This email is already used  or invalid</p>
-                    <input type="email" class="form-control " id="emailSignUp" placeholder="Enter your email" required>
                     <input type="password" class="form-control mb-3" id="passwordSignUp" placeholder="Enter your password">
                     <p class="text-danger fs-5 d-none" id="passwordError">Your password should start with @ character and have at least 1 charater uppercase then at least  4 characters</p>
                     <p class="text-danger fs-5 d-none" id="signUpError">All inputs is required</p>

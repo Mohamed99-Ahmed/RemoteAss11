@@ -20,8 +20,10 @@ const signUpBtn = document.querySelector("#signUpBtn");
 const signUpError = document.querySelector("#signUpError");
 const emailError = document.querySelector("#emailError");
 const successSignUp = document.querySelector("#successSignUp");
+const nameError = document.querySelector("#nameError");
 const signInLink = document.querySelector("#signInLink");
 // start global variables
+let valName = /^[A-Za-z]{3,}$/;
 let valEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let valPassword = /^[@][A-Z][A-Za-z0-9]{4,}$/;
 let users ;
@@ -48,19 +50,25 @@ function validateSignUp(){
     if(signUpName.value === "" || signUpEmail.value === "" || signUpPassword.value === ""){
         signUpError.classList.remove("d-none"); //Display Eorror (All inputs must be requied)
     }else{
-        // loop in userus and if an
-        if(users.some(user => user.email === signUpEmail.value) || !valEmail.test(signUpEmail.value)){
+        // Validate name
+        if (!valName.test(signUpName.value)) {
+            nameError.classList.remove("d-none");
+            signUpError.classList.add("d-none");
+        } else if(users.some(user => user.email === signUpEmail.value) || !valEmail.test(signUpEmail.value)){
+            nameError.classList.add("d-none");
             emailError.classList.remove("d-none");
             signUpError.classList.add("d-none");
         }else if(!valPassword.test(signUpPassword.value)){
+            nameError.classList.add("d-none");
+            emailError.classList.add("d-none");
             passwordError.classList.remove("d-none");
             signUpError.classList.add("d-none");
-            emailError.classList.add("d-none");
         }
         else{
             addUser();
             successSignUp.classList.remove("d-none");
             signUpError.classList.add("d-none");
+            nameError.classList.add("d-none");
             emailError.classList.add("d-none");
             passwordError.classList.add("d-none");
         }
