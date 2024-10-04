@@ -1,0 +1,74 @@
+/* start main styline */
+:root{
+    --main-color:#24353F;
+    --sec-color:#17A2B8;
+    
+}
+html{
+    font-family: "Titillium Web", sans-serif;
+}
+body{
+  
+}
+img{
+    width:100% !important;
+    display:block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    text-transform: capitalize;
+}
+.text-mcolor{
+    color:var(--main-color)
+}
+.text-scolor{
+    color:var(--sec-color)
+}
+.bg-mcolor{
+    background-color:var(--main-color); 
+}
+.bg-scolor{
+    background-color:var(--sec-color);
+}
+/* End main styling */
+/* start main */
+main {
+    min-height:100vh;
+}
+.box{
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+form > input{
+    background-color: transparent !important;
+    color:white !important;
+}
+.form-control:focus{
+    box-shadow:none;
+    border:1px solid rgba(91, 91, 223, 0.979) !important;
+}
+input::placeholder {
+    color: rgb(151, 151, 151) !important;
+    opacity: 1; /* Firefox */
+}
+.home .navbar-toggler{
+    border:none
+}
+
+.home header nav{
+    border:1px solid  rgba(0, 0, 0, 0.473);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.473);
+    background-color: var(--main-color);
+}
+.home .navbar-toggler:focus {
+box-shadow: none;
+}
+.home article{
+    height:calc(100vh - 58px);
+    margin-top:58px;
+}
+/* End main */
